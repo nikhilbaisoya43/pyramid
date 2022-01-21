@@ -1,10 +1,8 @@
 package main
 
-import "fmt"
-
 func main() {
 
-	var n int = 4
+	var n int = 7
 	// for i := 1; i < n; i++ {
 	// 	for j := 1; j <= i; j++ {
 	// 		fmt.Print("*")
@@ -258,21 +256,26 @@ func main() {
 	// -+
 	// +
 
-	for i := 1; i <= n; i++ {
-		for j := n; j > i; j-- {
-			fmt.Print("-")
-		}
-		fmt.Print("+")
-		for k := 1; k < 2*(i-1); k++ {
-			fmt.Print("-")
-		}
-		if i == 1 {
-			fmt.Print("\n")
-		} else {
-			fmt.Print("+\n")
-		}
+	// for i := 1; i <= n; i++ {
+	// 	for j := n; j > i; j-- {
+	// 		fmt.Print("-")
+	// 	}
+	// 	fmt.Print("+")
+	// 	for k := 1; k < 2*(i-1); k++ {
+	// 		fmt.Print("-")
+	// 	}
+	// 	if i == 1 {
+	// 		fmt.Print("\n")
+	// 	} else {
+	// 		fmt.Print("+\n")
+	// 	}
 
-	}
+	// }
+	// output
+	// ---+
+	// --+-+
+	// -+---+
+	// +-----+
 
 	// var k int = 1
 	// for i := 1; i <= n; i++ {
@@ -316,25 +319,158 @@ func main() {
 	//      +-+
 	//       +
 
-	// var q int = 1
-	// for i := 0; i < n; i++ {
-	// 	for j := i; j < n-1; j++ {
+	// for i := 1; i <= n; i++ {
+	// 	for j := i; j < n; j++ {
 	// 		fmt.Print("-")
 	// 	}
-	// 	for k := 0; k <= i; k++ {
-	// 		if k == 0 || i == 0 {
-	// 			q = 1
+	// 	for j := 1; j <= i; j++ {
+	// 		fmt.Print("+")
+	// 	}
+
+	// 	fmt.Print("\n")
+	// }
+	// for i := n; i >= 1; i-- {
+	// 	for j := i; j <= n; j++ {
+	// 		fmt.Print("-")
+	// 	}
+	// 	for k := 1; k < i; k++ {
+	// 		fmt.Print("+")
+	// 	}
+	// 	fmt.Print("\n")
+	// }
+	// output
+	// ------+
+	// -----++
+	// ----+++
+	// ---++++
+	// --+++++
+	// -++++++
+	// +++++++
+	// -++++++
+	// --+++++
+	// ---++++
+	// ----+++
+	// -----++
+	// ------+
+	// -------
+	// for i := 1; i <= n; i++ {
+	// 	for j := i; j <= n; j++ {
+	// 		fmt.Print("-")
+	// 	}
+	// 	for j := 1; j <= 2*i-1; j++ {
+	// 		if j == 1 || j == 2*i-1 {
+	// 			fmt.Print("+")
 	// 		} else {
-	// 			q = q * (i - k + 1) / k
+	// 			fmt.Print("-")
 	// 		}
-	// 		fmt.Printf(" %d", q)
 	// 	}
-	// 	fmt.Printf("\n")
+	// 	fmt.Print("\n")
 	// }
-	// for i := 0; i < n; i++ {
-	// 	for j := i; j <= n-1; j++ {
-	// 		fmt.Print(i, j, "\n")
+	// for i := n; i >= 1; i-- {
+	// 	for j := n; j > i; j-- {
+	// 		fmt.Print("-")
 	// 	}
+	// 	fmt.Print("+")
+	// 	for j := 1; j <= 2*(i-1); j++ {
+	// 		fmt.Print("-")
+	// 	}
+	// 	if i == 1 {
+	// 		fmt.Print("\n")
+	// 	} else {
+	// 		fmt.Print("+")
+	// 	}
+	// 	fmt.Print("\n")
 	// }
+	// output
+	// -------+
+	// ------+-+
+	// -----+---+
+	// ----+-----+
+	// ---+-------+
+	// --+---------+
+	// -+-----------+
+	// +------------+
+	// -+----------+
+	// --+--------+
+	// ---+------+
+	// ----+----+
+	// -----+--+
+	// ------+
+	// for i := 1; i <= n; i++ {
+	// 	for j := 1; j <= n-i; j++ {
+	// 		fmt.Print("_")
+	// 	}
+	// 	for j := 1; j <= i; j++ {
+	// 		fmt.Print(j)
+	// 	}
+	// 	for j := i - 1; j >= 1; j-- {
+	// 		fmt.Print(j)
+	// 	}
+
+	// 	fmt.Print("\n")
+	// }
+	// output
+	// ______1
+	// _____121
+	// ____12321
+	// ___1234321
+	// __123454321
+	// _12345654321
+	// 1234567654321
+
+	// var k int = 1
+	// for i := 1; i <= n; i++ {
+	// 	for j := 1; j <= i; j++ {
+	// 		fmt.Print(k)
+	// 		k++
+	// 	}
+	// 	fmt.Print("\n")
+	// }
+	// 	output
+	// 	1
+	// 23
+	// 456
+	// 78910
+	// 1112131415
+	// 161718192021
+	// 22232425262728
+
+	// var alphabet int = 65
+	// for i := 0; i <= n; i++ {
+	// 	for j := 0; j <= i; j++ {
+	// 		fmt.Printf("%c", alphabet+j)
+	// 	}
+	// 	fmt.Print("\n")
+	// }
+	// output
+	// A
+	// AB
+	// ABC
+	// ABCD
+	// ABCDE
+	// ABCDEF
+	// ABCDEFG
+	// ABCDEFGH
+
+	// var alphabet int = 65
+	// for i := 0; i <= n; i++ {
+
+	// 	for j := i; j <= n; j++ {
+	// 		fmt.Print("-")
+	// 	}
+	// 	for j := 0; j <= i; j++ {
+	// 		fmt.Printf("%c ", alphabet+j)
+	// 	}
+	// 	fmt.Print("\n")
+	// }
+	// output
+	// --------A
+	// -------A B
+	// ------A B C
+	// -----A B C D
+	// ----A B C D E
+	// ---A B C D E F
+	// --A B C D E F G
+	// -A B C D E F G H
 
 }
